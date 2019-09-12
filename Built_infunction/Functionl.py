@@ -1,4 +1,4 @@
-# enumerate() º¯Êı ,È¡³öË÷ÒıÓëÔªËØ±¾Éí
+# enumerate() å‡½æ•° ,å–å‡ºç´¢å¼•ä¸å…ƒç´ æœ¬èº«
 
 L = ['Admin','Lisa','Bart','Paull']
 a = tuple(enumerate(L))
@@ -16,32 +16,24 @@ a = list(zip([10,20,30],['A','B','C']))
 
 print(a)
 
-
-#ÀûÓÃmap()º¯Êı£¬°ÑÒ»¸ölist£¨°üº¬Èô¸É²»¹æ·¶µÄÓ¢ÎÄÃû×Ö£©±ä³ÉÒ»¸ö°üº¬¹æ·¶Ó¢ÎÄÃû×ÖµÄlist£º
+#åˆ©ç”¨map()å‡½æ•°ï¼ŒæŠŠä¸€ä¸ªlistï¼ˆåŒ…å«è‹¥å¹²ä¸è§„èŒƒçš„è‹±æ–‡åå­—ï¼‰å˜æˆä¸€ä¸ªåŒ…å«è§„èŒƒè‹±æ–‡åå­—çš„listï¼š
 def format_name(s):
     s = s[0].upper() + s[1:].lower()
     return s
 print(list(map(format_name, ['adam', 'LISA', 'barT'])))
 
 
-
-
-#ÀûÓÃrecude()À´Çó»ı£º
+#åˆ©ç”¨recude()æ¥æ±‚ç§¯ï¼š
 from functools import reduce
 def prod(x,y):
     return x*y
 
 print(reduce(prod,[2,4,5,7,12]))
 
-
-
-
-
-#ÓÃfilter()¹ıÂË³ö1~100ÖĞÆ½·½¸ùÊÇÕûÊıµÄÊı
+#ç”¨filter()è¿‡æ»¤å‡º1~100ä¸­å¹³æ–¹æ ¹æ˜¯æ•´æ•°çš„æ•°
 def is_sqr(x):
     num = int(x**0.5)
 
     return x and num*num == x
-
 
 print(list(filter(is_sqr,list(range(1,101)))))
