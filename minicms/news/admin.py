@@ -3,7 +3,7 @@ from .models import Colum,Article
 
 @admin.register(Colum)
 class ColumAdmin(admin.ModelAdmin):
-    list_display = ('name','slug','intro',)
+    list_display = ('name','slug','intro','nav_display','home_display')
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):

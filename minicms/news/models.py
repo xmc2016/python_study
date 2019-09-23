@@ -7,6 +7,9 @@ class Colum(models.Model):
     name = models.CharField('栏目名称',max_length=256)
     slug = models.CharField('栏目网址',max_length=256,db_index=True)
     intro = models.TextField('栏目简介',default='')
+    nav_display = models.BooleanField('导航显示',default=False)
+    home_display = models.BooleanField('首页显示',default=False)
+
     class Meta:
         verbose_name='栏目'
         verbose_name_plural=verbose_name

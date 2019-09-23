@@ -6,8 +6,17 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 
 def index(request):
-    columns = Colum.objects.all()
-    return render(request,'index.html',{'columns':columns})
+    # columns = Colum.objects.all()
+    # return render(request,'index.html',{'columns':columns})
+    home_display_columns = Colum.objects.filter(home_display=True)
+    nav_display_columns = Colum.objects.filter(nav_display=True)
+
+    return render(request,'index.html',{
+        'home_display_columns': home_display_columns,
+        'nav_display_columns': nav_display_columns,
+
+    })
+
 
 def column_detail(request, column_slug):
     column = Colum.objects.get(slug=column_slug)
