@@ -1,0 +1,17 @@
+#获取之前的时间,
+# day ,hours,minutes,second, weeks
+def  previousTime(date_class,num):
+    time_format = "%Y-%m-%d %H:%M:%S" 
+    now_date = datetime.datetime.now()
+    if date_class=="days":
+        time_interval = datetime.timedelta(days=num)
+    elif date_class=="hours":
+        time_interval = datetime.timedelta(hours=num)
+    elif date_class=="minutes":
+        time_interval = datetime.timedelta(minutes=num)
+    elif date_class=="seconds":
+        time_interval = datetime.timedelta(seconds=num)
+    elif date_class=="weeks":
+        time_interval = datetime.timedelta(weeks=num)
+    old_date=(now_date+time_interval).strftime(time_format)
+    return old_date
